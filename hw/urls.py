@@ -8,5 +8,5 @@ from . import views
 # create a list of URLS for this app:
 urlpatterns = [
     path(r'', views.home, name="home"), ## our first URL
-    path(r'about', views.about, name="about")
+    path(r'about', views.about, name="about"), ## new
 ]
