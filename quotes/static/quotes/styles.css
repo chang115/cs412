@@ -1,7 +1,50 @@
 body {
     background-color: azure;
+    margin: auto;
+
 }
 
 h1 {
-    color: purple;
+    color: royalblue;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: royalblue;
+    color: 
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li {
+    font-weight: bold;
+    font-size: large;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+  
