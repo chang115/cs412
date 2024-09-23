@@ -15,7 +15,7 @@ imagesl = ["https://upload.wikimedia.org/wikipedia/commons/0/05/Martin_Luther_Ki
 
 def quotes(request):
 
-    template_name = 'quote.html'
+    template_name = 'quotes/quote.html'
 
     context = {
         "quote" : quotesl[(random.randint(0, 2))],
@@ -27,7 +27,7 @@ def quotes(request):
 
 def quote(request):
 
-    template_name = 'quote.html'
+    template_name = 'quotes/quote.html'
 
     context = {
         "quote" : quotesl[(random.randint(0, 2))],
@@ -39,7 +39,7 @@ def quote(request):
 
 def show_all(request):
 
-    template_name = 'show_all.html'
+    template_name = 'quotes/show_all.html'
 
     context = {
         "quote" : quotesl,
@@ -51,6 +51,6 @@ def show_all(request):
 
 def about(request):
 
-    template_name = 'about.html'
+    template_name = 'quotes/about.html'
 
     return render(request, template_name)
