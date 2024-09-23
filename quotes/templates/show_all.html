@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+    {% for x in quote %}
+    <li>
+        {{x}}
+    </li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for y in image %}
+    <li>
+        <img src={{y}} alt="image of MLK" width="400px">
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
