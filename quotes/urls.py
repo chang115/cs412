@@ -3,7 +3,7 @@
 
 from django.urls import path
 from django.conf import settings
-from . import views
+from ...quotes import views
 
 # create a list of URLs for this app:
 urlpatterns = [
