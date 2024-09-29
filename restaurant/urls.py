@@ -9,5 +9,5 @@ from . import views
 urlpatterns = [
     path(r'', views.restaurant, name="restaurant"), 
     path(r'order', views.order, name="order"), ## new
-    path(r'confirmatino', views.confirmation, name="confirmation"),
+    path(r'confirmation', views.confirmation, name="confirmation"),
 ]
