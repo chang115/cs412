@@ -14,7 +14,7 @@ items = {
 
 special = ["Gyoza", "Karage", "Tempura"]
 
-def restaurant(request):
+def main(request):
 
     template_name = 'restaurant/restaurant.html'
 
