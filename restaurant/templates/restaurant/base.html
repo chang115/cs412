@@ -1,0 +1,29 @@
+<!-- restaurant/templates/base.html 
+ This is base page from which all other pages will inherit.
+ Put common code here, specific code in separate pages
+ -->
+ {% load static %}
+<html>
+    <head>
+        <title>Futago Udon</title>
+        <!-- <link rel="stylesheet" href="/static/styles.css"> -->
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <h1 class="center">Futago Udon</h1>
+
+    <nav class="center">
+        <ul>
+            <a href="{% url 'restaurant' %}">Main Page</a>
+            <a href="{% url 'order' %}">Order Page</a>
+        </ul>
+    </nav>
+
+    {% block content %}
+    <!-- put the interesting (specific stuff) here -->
+    {% endblock %}
+
+    
+    
+    </body>
+</html>
