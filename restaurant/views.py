@@ -16,7 +16,7 @@ special = ["Gyoza", "Karage", "Tempura"]
 
 def main(request):
 
-    template_name = 'restaurant/restaurant.html'
+    template_name = 'restaurant/main.html'
 
     context = {
         "image" : "https://cdn.vox-cdn.com/thumbor/DS5d7vPHp34X2xv3wngDcu7W7Lk=/0x0:1080x1080/1200x800/filters:focal(454x454:626x626)/cdn.vox-cdn.com/uploads/chorus_image/image/62998205/51940799_145360646483444_5002411792766076963_n.1549383266.jpg"
