@@ -4,13 +4,14 @@
 <html>
 <head>
     <title>Mini Facebook</title>
-    <link rel="stylesheet" href="{% static 'design.css' %}">
+    <link rel="stylesheet" href="{% static 'fbstyle.css' %}">
 </head>
 <body>
     <h1>Mini Facebook</h1>
     <nav>
         <ul>
             <a href="{% url 'show_all_profiles' %}">All Profiles</a>
+            <a href="{% url 'create_profile' %}">Create a Profile</a>
         </ul>
     </nav>
 

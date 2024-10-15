@@ -1,14 +1,13 @@
 body {
-    background-color: pink;
+    background-color: azure;
 }
 
 h1 {
-    color: red;
+    color: cyan;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h2 {
-    color:red;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -17,15 +16,12 @@ h3 {
 }
 
 .grid-container {
-    background: #eee;
+    background: azure;
     max-width: 900px;
     display: grid;
     /* grid-template-columns: 300px 300px 300px; */
     grid-template-columns: repeat(3, 1fr);
-     grid-gap: 10px;
+     grid-gap: 15px;
     max-width: 1200px;
     margin: 20px auto;
 }
-
-
-
