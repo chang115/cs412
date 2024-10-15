@@ -9,5 +9,5 @@ from . import views
 urlpatterns = [
    # path(r'', views.home, name="home"), 
     path(r'', views.ShowAllView.as_view(), name="show_all"),
-
+    ##path(r'show_all', views.ShowAll)
 ]

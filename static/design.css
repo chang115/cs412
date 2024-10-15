@@ -1,9 +1,9 @@
 body {
-    background-color: azure;
+    background-color: yellow;
 }
 
 h1 {
-    color: blue;
+    color: cyan;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -13,5 +13,16 @@ h2 {
 
 h3 {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.grid-container {
+    background: #eee;
+    max-width: 900px;
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px; */
+    grid-template-columns: repeat(3, 1fr);
+     grid-gap: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
