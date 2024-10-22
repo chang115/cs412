@@ -16,6 +16,7 @@
 
     <div>
         <a href="{% url 'create_status' show_profile.pk %}">Create Status</a>
+        <a href="{% url 'update_profile' show_profile.pk %}">Update Profile</a>
         <h2>Status Messages</h2>
         {% for m in show_profile.get_status_messages %}
     <profile>

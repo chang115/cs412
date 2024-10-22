@@ -3,7 +3,7 @@ from typing import Any
 
 # Create your views here.
 from . models import *
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .forms import *
 
 
@@ -64,3 +64,13 @@ class CreateStatusMessageView(CreateView):
         #return "/blog/show_all"
         #return reverse("show_all")
         return reverse("show_profile", kwargs=self.kwargs)
+    
+class UpdateProfileView(UpdateView):
+    model = Profile
+    form_class = UpdateProfileForm
+    template_name = 'mini_fb/update_profile_form.html'
+
+    def form_valid(self, form):
+        
+        print(f'UpdateProfileView: form.cleaned_data={form.cleaned_data}')
+        return super().form_valid(form)
