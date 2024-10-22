@@ -25,8 +25,10 @@
         <strong>by {{m.profile}} at {{m.timestamp}}</strong>
         {% for img in m.get_images %}
             <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}' width="200px">
+            
         {% endfor %}
-        
+        <a href="{% url 'delete_message' m.pk %}">delete</a>
+        <a href="{% url 'update_message' m.pk %}">update</a>
         </div>
     </profile>
     {% endfor %}

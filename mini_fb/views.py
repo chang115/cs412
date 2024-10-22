@@ -3,7 +3,7 @@ from typing import Any
 
 # Create your views here.
 from . models import *
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .forms import *
 
 
@@ -74,3 +74,37 @@ class UpdateProfileView(UpdateView):
         
         print(f'UpdateProfileView: form.cleaned_data={form.cleaned_data}')
         return super().form_valid(form)
+    
+class DeleteStatusMessageView(DeleteView):
+    model = StatusMessage
+    template_name = 'mini_fb/delete_status_form.html'
+    context_object_name = 'delete_message'
+
+    
+    def get_success_url(self):
+        '''Return a the URL to which we should be directed after the delete.'''
+        
+        pk = self.kwargs.get('pk')
+        message = StatusMessage.objects.filter(pk=pk).first() 
+        profile = message.profile 
+        return reverse('show_profile', kwargs={'pk':profile.pk})
+    
+class UpdateStatusMessageView(UpdateView):
+    model = StatusMessage
+    form_class = UpdateStatusMessageForm
+    template_name = 'mini_fb/update_status_form.html'
+    context_object_name = 'update_message'
+    
+
+    def form_valid(self, form):
+        
+        print(f'UpdateStatusMessageView: form.cleaned_data={form.cleaned_data}')
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        '''Return a the URL to which we should be directed after the update.'''
+        
+        pk = self.kwargs.get('pk')
+        message = StatusMessage.objects.filter(pk=pk).first() 
+        profile = message.profile 
+        return reverse('show_profile', kwargs={'pk':profile.pk})

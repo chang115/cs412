@@ -1,0 +1,22 @@
+{% extends 'mini_fb/base.html' %}
+
+{% block content %}
+<h3>Update a status message</h3>
+
+<form action="" method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+   
+
+    
+<p>
+</p>
+<form method='POST'>
+    {% csrf_token %}
+    <input type='submit' name="update" value="Update">
+</form>
+<form method='GET' action="{% url 'show_profile' update_message.profile.pk %}">
+    {% csrf_token %}
+    <input type='submit' name="cancel" value="Cancel">
+</form>
+{% endblock %}
