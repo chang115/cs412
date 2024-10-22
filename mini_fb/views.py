@@ -29,7 +29,7 @@ class CreateProfileView(CreateView):
 class CreateStatusMessageView(CreateView):
     form_class = CreateStatusMessageForm
     template_name = 'mini_fb/create_status_form.html'
-    context_object_name = 'messages'
+    
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         '''
@@ -45,11 +45,18 @@ class CreateStatusMessageView(CreateView):
         return context
 
     def form_valid(self, form):
-
+        sm = form.save(commit=False)
         profile = Profile.objects.get(pk=self.kwargs['pk'])
-
         form.instance.profile = profile
-
+        sm.profile = profile
+        sm.save()
+        files = self.request.FILES.getlist('files')
+        for file in files:
+            image = Image()
+            image.image_file = file  
+            image.fkey = sm  
+            image.save()
+        
         return super().form_valid(form)   
     
     def get_success_url(self) -> str:

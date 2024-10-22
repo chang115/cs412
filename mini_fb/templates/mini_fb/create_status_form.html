@@ -3,11 +3,11 @@
 {% block content %}
 <h2>Status Message Form</h2>
 
-<form action="" method = "POST">
+<form action="" method = "POST" enctype="multipart/form-data">
     
     {{form.as_p}}
 
-    
+    <input type="file" name = "files" multiple>
     <input type="submit" name="Create a Status Message">
     {% csrf_token %}
 </form>
