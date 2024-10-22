@@ -18,4 +18,6 @@ class Article(models.Model):
         return f"{self.title} by {self.author}"
     
     #when u need to run migrations only when you modify the data
+
+
     
