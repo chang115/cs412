@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from typing import Any
 
 # Create your views here.
 from . models import *
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from .forms import *
 
 
@@ -108,3 +108,21 @@ class UpdateStatusMessageView(UpdateView):
         message = StatusMessage.objects.filter(pk=pk).first() 
         profile = message.profile 
         return reverse('show_profile', kwargs={'pk':profile.pk})
+    
+class CreateFriendView(View):
+
+    def dispatch(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        other_pk = kwargs.get('other_pk')
+
+        profile = Profile.objects.get(pk=pk)
+        other_profile = Profile.objects.get(pk=other_pk)
+
+        profile.add_friend(other_profile)
+        
+        return redirect('show_profile', pk=pk)
+    
+class ShowFriendSuggestionsView(DetailView):
+    model = Profile
+    template_name = 'mini_fb/friend_suggestions.html'
+    context_object_name = 'profile'
