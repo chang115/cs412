@@ -1,6 +1,7 @@
 {% extends 'mini_fb/base.html' %}
 
 {% block content %}
+    <a href="{% url 'show_profile' profile.pk %}">Back to {{ profile.first_name }}'s Page</a>
     <h2>People {{ profile.first_name }} {{ profile.last_name }} might know:</h2>
     {% for p in profile.get_friend_suggestions %}
     <a href="{% url 'show_profile' p.pk %}"><img src="{{p.profile_image_url}}" alt="{{p.profile_image_url}}" width="200px"></a>
