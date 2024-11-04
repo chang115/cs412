@@ -3,7 +3,7 @@
 
 {% block content %}
 {% if request.user.is_authenticated and request.user == show_profile.user %}
-<a href="{% url 'news_feed' show_profile.pk %}">News Feed</a>
+<a href="{% url 'news_feed' %}">News Feed</a>
 {% endif %}
 
 
@@ -21,8 +21,8 @@
 
     <div>
         {% if request.user.is_authenticated and request.user == show_profile.user %}
-        <a href="{% url 'create_status' show_profile.pk %}">Create Status</a>
-        <a href="{% url 'update_profile' show_profile.pk %}">Update Profile</a>
+        <a href="{% url 'create_status' %}">Create Status</a>
+        <a href="{% url 'update_profile' %}">Update Profile</a>
         {% endif %}
         <h2>Status Messages</h2>
         {% for m in show_profile.get_status_messages %}
@@ -49,7 +49,9 @@
 
         {% endfor %}
     </friend>
-    <a href="{% url 'show_suggestions' show_profile.pk %}">Friend Suggestions</a>
+    {% if request.user.is_authenticated and request.user == show_profile.user %}
+    <a href="{% url 'show_suggestions' %}">Friend Suggestions</a>
+    {% endif %}
     </div>
 </main>
 {% endblock %}

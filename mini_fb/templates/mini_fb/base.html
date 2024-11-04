@@ -14,10 +14,14 @@
             <a href="{% url 'show_all_profiles' %}">All Profiles</a>
             <a href="{% url 'create_profile' %}">Create a Profile</a>
             {% if request.user.is_authenticated %}
-            
-            
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Log Out</button>
+            </form>
             {% else %}
-           
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Log In</button>
             {% endif %}
         </ul>
         <p>
@@ -27,6 +31,8 @@
             Not logged in.
         {% endif %}
         </p>
+        
+        
     </nav>
 
     {% block content %}

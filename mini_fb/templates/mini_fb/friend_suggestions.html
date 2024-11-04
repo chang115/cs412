@@ -6,7 +6,7 @@
     {% for p in profile.get_friend_suggestions %}
     <a href="{% url 'show_profile' p.pk %}"><img src="{{p.profile_image_url}}" alt="{{p.profile_image_url}}" width="200px"></a>
     <a href="{% url 'show_profile' p.pk %}"><p>{{p.first_name}} {{p.last_name}}</p></a>
-    <a href="{% url 'add_friend' profile.pk p.pk %}"><p>Add Friend</p></a>
+    <a href="{% url 'add_friend' p.pk %}"><p>Add Friend</p></a>
     <br>
     {% endfor %}
 

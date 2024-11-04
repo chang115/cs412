@@ -1,0 +1,6 @@
+{% extends 'mini_fb/base.html' %}
+{% block content %}
+    <h1>You have been logged out</h1>
+    <p>Thank you for visiting! If you want to log in again, please click the link below.</p>
+    <a href="{% url 'login' %}">Log in again</a>
+{% endblock %}
