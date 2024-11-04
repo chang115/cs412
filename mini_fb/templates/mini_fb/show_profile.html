@@ -2,8 +2,10 @@
 
 
 {% block content %}
+{% if request.user.is_authenticated and request.user == show_profile.user %}
 <a href="{% url 'news_feed' show_profile.pk %}">News Feed</a>
-<a href="{% url 'show_all_profiles' %}">All Profiles</a>
+{% endif %}
+
 
 <main class="grid-container">
     <div class="featured">
@@ -18,8 +20,10 @@
     </div>
 
     <div>
+        {% if request.user.is_authenticated and request.user == show_profile.user %}
         <a href="{% url 'create_status' show_profile.pk %}">Create Status</a>
         <a href="{% url 'update_profile' show_profile.pk %}">Update Profile</a>
+        {% endif %}
         <h2>Status Messages</h2>
         {% for m in show_profile.get_status_messages %}
     <profile>
@@ -30,8 +34,10 @@
             <img src='{{img.image_file.url}}' alt='{{img.image_file.url}}' width="200px">
             
         {% endfor %}
+        {% if request.user.is_authenticated and request.user == show_profile.user %}
         <a href="{% url 'delete_message' m.pk %}">delete</a>
         <a href="{% url 'update_message' m.pk %}">update</a>
+        {% endif %}
         </div>
     </profile>
         {% endfor %}
