@@ -15,7 +15,7 @@ class VotersListView(ListView):
     paginate_by = 100
 
     def get_queryset(self):
-        # Start with the entire queryset
+        
         qs = super().get_queryset()
 
         # Filter by party affiliation
@@ -50,12 +50,11 @@ class VotersListView(ListView):
         if self.request.GET.get('v23town') == '1':
             qs = qs.filter(v23town=True)
 
-        # Return the filtered queryset
+       
         return qs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Generate a list of years from 1900 to the current year
         context['years'] = list(range(1920, 2005))
         context['scores'] = list(range(0, 6))
         return context
@@ -72,7 +71,7 @@ class GraphsView(ListView):
     context_object_name = 'voters'
 
     def get_queryset(self):
-        # Start with the entire queryset
+        
         qs = super().get_queryset()
 
         # Filter by party affiliation
@@ -107,7 +106,7 @@ class GraphsView(ListView):
         if self.request.GET.get('v23town') == '1':
             qs = qs.filter(v23town=True)
 
-        # Return the filtered queryset
+        
         return qs
     
     def get_context_data(self, **kwargs):
@@ -148,7 +147,7 @@ class GraphsView(ListView):
         fig3.update_layout(title_text="Voter Participation in Elections")
         context['election_participation_graph'] = plotly.offline.plot(fig3, auto_open=False, output_type="div")
 
-        # Send additional data for filters
+        
         context['years'] = list(range(1900, 2005))
         context['scores'] = list(range(0, 6))
 
