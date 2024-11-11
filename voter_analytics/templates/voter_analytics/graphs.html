@@ -1,4 +1,5 @@
-
+{% extends 'voter_analytics/base.html' %}
+{% block content %}
 <h3>Voter Data Graphs</h3>
 <table>
     <form method="GET" action="{% url 'graphs' %}">
@@ -97,3 +98,4 @@
     <h3>Voter Participation in Elections</h3>
     {{ election_participation_graph|safe }}
 </div>
+{% endblock %}
