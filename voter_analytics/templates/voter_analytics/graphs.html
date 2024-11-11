@@ -1,0 +1,99 @@
+
+<h3>Voter Data Graphs</h3>
+<table>
+    <form method="GET" action="{% url 'graphs' %}">
+        <div class="filter-section">
+            <!-- Party Affiliation Filter -->
+            <label for="party_affiliation">Party Affiliation:</label>
+            <select name="party_affiliation" id="party_affiliation">
+                <option value="">-- Any --</option>
+                <option value="D">Democrat</option>
+                <option value="R">Republican</option>
+                <option value="CC">Constitution Party</option>
+                <option value="L">Libertarian Party</option>
+                <option value="T">Tea Party</option>
+                <option value="O">Other</option>
+                <option value="G">Green Party</option>
+                <option value="J">Independent Party</option>
+                <option value="Q">Reform Party</option>
+                <option value="FF">Freedom Party</option>
+            </select>
+        </div>
+    
+        <!-- Date of Birth Filters -->
+        <div class="filter-section">
+            <label for="min_date_of_birth">Minimum Date of Birth:</label>
+            <select name="min_date_of_birth" id="min_date_of_birth">
+                <option value="">-- Any --</option>
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <div class="filter-section">
+            <label for="max_date_of_birth">Maximum Date of Birth:</label>
+            <select name="max_date_of_birth" id="max_date_of_birth">
+                <option value="">-- Any --</option>
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <!-- Voter Score Filter -->
+        <div class="filter-section">
+            <label for="voter_score">Voter Score:</label>
+            <select name="voter_score" id="voter_score">
+                <option value="">-- Any --</option>
+                {% for score in scores %}
+                    <option value="{{ score }}">{{ score }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <!-- Election Participation Filters -->
+        <div class="filter-section">
+            <label>Participation in Elections:</label><br>
+            <input type="checkbox" name="v20state" id="v20state" value="1">
+            <label for="v20state">2020 State</label><br>
+            
+            <input type="checkbox" name="v21town" id="v21town" value="1">
+            <label for="v21town">2021 Town</label><br>
+            
+            <input type="checkbox" name="v21primary" id="v21primary" value="1">
+            <label for="v21primary">2021 Primary</label><br>
+            
+            <input type="checkbox" name="v22general" id="v22general" value="1">
+            <label for="v22general">2022 General</label><br>
+            
+            <input type="checkbox" name="v23town" id="v23town" value="1">
+            <label for="v23town">2023 Town</label><br>
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="filter-section">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+</table>
+
+<form method="GET" action="{% url 'graphs' %}">
+    <!-- Filter form as previously described -->
+</form>
+
+<div>
+    <h3>Voter Birth Year Distribution</h3>
+    {{ birth_year_graph|safe }}
+</div>
+
+<div>
+    <h3>Voter Party Affiliation Distribution</h3>
+    {{ party_affiliation_graph|safe }}
+</div>
+
+<div>
+    <h3>Voter Participation in Elections</h3>
+    {{ election_participation_graph|safe }}
+</div>
