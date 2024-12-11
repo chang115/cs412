@@ -60,6 +60,7 @@ class Album(models.Model):
     numSongs = models.IntegerField(blank=False)
     artist = models.ForeignKey("Artist", on_delete=models.CASCADE)
     songs = models.ManyToManyField("Song", blank=True, related_name="albums")
+    album_image_url = models.URLField(blank=True)
 
     def __str__(self):
         return f"{self.title}"

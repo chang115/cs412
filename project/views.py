@@ -28,7 +28,8 @@ class SongListView(ListView):
             queryset = queryset.filter(
                 Q(title__icontains=query) |  # Match song title
                 Q(artist__stageName__icontains=query) |  # Match artist's stage name
-                Q(album__title__icontains=query)   # Match album title
+                Q(album__title__icontains=query) |  # Match album title
+                Q(genre__icontains=query) # Match genre
             )
 
         return queryset
@@ -93,6 +94,7 @@ class AlbumDetailView(DetailView):
     template_name = 'project/album_detail.html'
     context_object_name = 'album'
 
+# Artist Views
 
 class ArtistDetailView(DetailView):
     model = Artist

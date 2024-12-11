@@ -20,6 +20,7 @@
                     <strong><a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a></strong><br>
                    Artist: <a href="{% url 'artist_detail' song.artist.pk %}">{{ song.artist.stageName }}</a><br>
                     Album: <a href="{% url 'album_detail' song.album.pk %}">{{ song.album.title }}</a><br>
+                    Genre: {{song.genre}}
                 </li>
             {% endfor %}
         </ul>
