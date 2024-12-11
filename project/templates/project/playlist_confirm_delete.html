@@ -1,0 +1,14 @@
+<!-- project/templates/project/playlist_confirm_delete.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+<h1>Delete Playlist: {{ delete_playlist.title }}</h1>
+    <p>Are you sure you want to delete this playlist?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Deletion">
+    </form>
+
+    <a href="{% url 'playlists' %}">Cancel</a>
+{% endblock %}

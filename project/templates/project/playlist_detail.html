@@ -1,0 +1,17 @@
+<!-- project/templates/project/playlist_detail.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<h1>{{ playlist.title }}</h1>
+<p><strong>Number of Songs:</strong> {{ playlist.numSongs }}</p>
+
+<h2>Songs in this Playlist</h2>
+<ul>
+    {% for song in playlist.songs.all %}
+        <li><a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a> by <a href="{% url 'artist_detail' song.artist.pk %}">{{ song.artist }}</a></li>
+    {% empty %}
+        <li>No songs in this playlist.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

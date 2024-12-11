@@ -1,0 +1,9 @@
+<!-- project/templates/project/artist_detail.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<h1>{{ artist.stageName }}</h1>
+    <p><strong>Full Name:</strong> {{ artist.fname }} {{ artist.lname }}</p>
+    <p><strong>Age:</strong> {{ artist.age }}</p>
+{% endblock %}

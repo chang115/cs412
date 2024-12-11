@@ -1,0 +1,18 @@
+<!-- project/templates/project/album_detail.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<h1>{{ album.title }}</h1>
+    <p><strong>Artist:</strong> {{ album.artist }}</p>
+    <p><strong>Number of Songs:</strong> {{ album.numSongs }}</p>
+
+    <h2>Songs in this Album</h2>
+    <ul>
+        {% for song in album.song_set.all %}
+            <li>{{ song.title }} by {{ song.artist }}</li>
+        {% empty %}
+            <li>No songs in this album.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

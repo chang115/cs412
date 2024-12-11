@@ -1,0 +1,179 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: azure;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    font-size: 2em;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: plum;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+a {
+    color: plum;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.pagination {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    display: block;
+    padding: 8px 12px;
+    color: plum;
+    border: 1px solid plum;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: plum;
+    color: white;
+}
+
+
+.row .search-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-form input[type="text"],
+.search-form select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: plum;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: plum;
+}
+
+
+.graph-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.graph-container h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.graph iframe, .graph div {
+    width: 100%;
+    max-width: 700px;  
+    height: 500px;
+    border: none;
+}
+
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+form label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="text"],
+form select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}

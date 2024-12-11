@@ -1,0 +1,24 @@
+<!-- project/templates/project/base.html -->
+{% load static %}
+<html>
+    <head>
+        <title>Music Jam</title>
+        <link rel="stylesheet" href="{% static 'design.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Music Jam!</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'homepage' %}">Home</a></li>
+                    <li><a href="{% url 'search' %}">Jam!</a></li>
+                    <li><a href="{% url 'playlists' %}">My Playlists</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+    {% block content %}
+    {% endblock %}    
+  
+    </body>
+</html>

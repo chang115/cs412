@@ -1,0 +1,11 @@
+<!-- project/templates/project/song_detail.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<h1>{{ song.title }}</h1>
+<p><strong>Artist:</strong> {{ song.artist }}</p>
+<p><strong>Genre:</strong> {{ song.genre }}</p>
+<p><strong>Duration:</strong> {{ song.duration }} minutes</p>
+<p><strong>Albums:</strong> {{song.album }}</p>
+{% endblock %}

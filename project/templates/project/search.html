@@ -1,0 +1,29 @@
+<!-- project/templates/project/search.html -->
+{% extends 'project/base.html' %}
+
+{% block content %}
+<h1>Let's Jam!</h1>
+<h1>Search Songs</h1>
+
+    <!-- Search Form -->
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Results:</h2>
+    <!-- Search Results -->
+    {% if songs %}
+        <ul>
+            {% for song in songs %}
+                <li>
+                    <strong><a href="{% url 'song_detail' song.pk %}">{{ song.title }}</a></strong><br>
+                   Artist: <a href="{% url 'artist_detail' song.artist.pk %}">{{ song.artist.stageName }}</a><br>
+                    Album: <a href="{% url 'album_detail' song.album.pk %}">{{ song.album.title }}</a><br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No songs found matching your search.</p>
+    {% endif %}
+{% endblock %}

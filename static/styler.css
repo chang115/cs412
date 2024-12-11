@@ -1,0 +1,78 @@
+/* styler.css */
+
+/* Basic reset */
+html, body, ul, li, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set base font */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 4px solid #ff6600; /* A contrasting accent color */
+}
+
+/* Container for the header content */
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+/* Navigation bar styling */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background: #444;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #ff6600;
+}
+
+/* Content area */
+body > *:not(header) {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Headings and paragraphs in content */
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Footer or any additional sections (if needed) */
+/* You can add more styles as your application grows */
